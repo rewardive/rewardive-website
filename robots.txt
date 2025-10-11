@@ -1,0 +1,11 @@
+# Robots.txt for Rewardive
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://rewardive.app/sitemap.xml
+
+# Crawl-delay (optional, for politeness)
+Crawl-delay: 1
