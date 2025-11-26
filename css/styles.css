@@ -2,53 +2,35 @@
    CSS Variables & Design System
    ============================================ */
 :root {
-    /* Brand Colors - Deep Space/Vibrant Theme */
-    --primary-color: #6366f1;
-    /* Indigo 500 */
-    --primary-dark: #4338ca;
-    /* Indigo 700 */
-    --primary-light: #818cf8;
-    /* Indigo 400 */
-    --secondary-color: #ec4899;
-    /* Pink 500 */
-    --accent-color: #8b5cf6;
-    /* Violet 500 */
+    /* Brand Colors - Pixel Blue Theme */
+    --primary-color: #007bff;
+    /* Pixel Blue */
+    --primary-dark: #0056b3;
+    --primary-light: #4da3ff;
+    --secondary-color: #6c757d;
+    /* Gray */
+    --accent-color: #007bff;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
-    --gradient-hover: linear-gradient(135deg, #4f46e5 0%, #db2777 100%);
-    --gradient-surface: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-    --gradient-mesh: radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
-        radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
-        radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+    /* Backgrounds - Light Theme */
+    --bg-body: #ffffff;
+    --bg-surface: #f8f9fa;
+    --bg-card: #ffffff;
 
-    /* Backgrounds */
-    --bg-body: #0f172a;
-    /* Slate 900 */
-    --bg-surface: #1e293b;
-    /* Slate 800 */
-    --bg-card: rgba(30, 41, 59, 0.7);
-
-    /* Text Colors */
-    --text-primary: #f8fafc;
-    /* Slate 50 */
-    --text-secondary: #94a3b8;
-    /* Slate 400 */
-    --text-muted: #64748b;
-    /* Slate 500 */
+    /* Text Colors - Light Theme */
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --text-muted: #adb5bd;
     --text-on-brand: #ffffff;
 
-    /* Glassmorphism */
-    --glass-bg: rgba(255, 255, 255, 0.03);
-    --glass-border: rgba(255, 255, 255, 0.08);
-    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
-    --backdrop-blur: blur(12px);
+    /* Borders */
+    --border-color: #dee2e6;
+    --border-light: #e9ecef;
 
-    /* Shadows */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-    --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+    /* Shadows - Clean & Subtle */
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-glow: 0 0 0 3px rgba(0, 123, 255, 0.1);
 
     /* Typography */
     --font-primary: 'Inter', sans-serif;
@@ -80,6 +62,28 @@
     --header-height: 80px;
 }
 
+/* Dark Theme */
+[data-theme="dark"] {
+    /* Backgrounds - Dark Theme */
+    --bg-body: #0f172a;
+    --bg-surface: #1e293b;
+    --bg-card: #1e293b;
+
+    /* Text Colors - Dark Theme */
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+
+    /* Borders - Dark Theme */
+    --border-color: #334155;
+    --border-light: #475569;
+
+    /* Shadows - Dark Theme */
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
 /* ============================================
    Reset & Base Styles
    ============================================ */
@@ -102,9 +106,8 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
-    background-image: var(--gradient-mesh);
-    background-attachment: fixed;
     min-height: 100vh;
+    transition: background-color var(--transition-base), color var(--transition-base);
 }
 
 img {
@@ -146,19 +149,8 @@ button {
 }
 
 .gradient-text {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--primary-color);
     font-weight: 800;
-}
-
-.glass-panel {
-    background: var(--glass-bg);
-    backdrop-filter: var(--backdrop-blur);
-    -webkit-backdrop-filter: var(--backdrop-blur);
-    border: 1px solid var(--glass-border);
-    box-shadow: var(--glass-shadow);
 }
 
 /* ============================================
@@ -177,11 +169,12 @@ button {
 }
 
 .header.scrolled {
-    background: rgba(15, 23, 42, 0.8);
+    background: var(--bg-body);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--border-color);
     height: 70px;
+    box-shadow: var(--shadow-sm);
 }
 
 .nav {
@@ -199,6 +192,18 @@ button {
     font-weight: 800;
     color: var(--text-primary);
     letter-spacing: -0.02em;
+}
+
+.logo-image {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 22%;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 800;
 }
 
 .logo-icon {
@@ -235,7 +240,7 @@ button {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--gradient-primary);
+    background: var(--primary-color);
     transition: width var(--transition-base);
     border-radius: var(--radius-full);
 }
@@ -243,6 +248,29 @@ button {
 .nav-link:hover::after,
 .nav-link.active::after {
     width: 100%;
+}
+
+.theme-toggle {
+    background: transparent;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-full);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    margin-right: var(--spacing-sm);
+}
+
+.theme-toggle:hover {
+    border-color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.theme-icon {
+    font-size: 1.25rem;
 }
 
 .nav-toggle,
@@ -269,28 +297,28 @@ button {
 }
 
 .btn-primary {
-    background: var(--gradient-primary);
+    background: var(--primary-color);
     color: var(--text-on-brand);
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
-    border: 1px solid transparent;
+    box-shadow: var(--shadow-md);
+    border: none;
 }
 
 .btn-primary:hover {
+    background: var(--primary-dark);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.5);
-    filter: brightness(1.1);
+    box-shadow: var(--shadow-lg);
 }
 
 .btn-secondary {
-    background: rgba(255, 255, 255, 0.05);
+    background: transparent;
     color: var(--text-primary);
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(4px);
+    border: 2px solid var(--border-color);
 }
 
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
+    background: var(--bg-surface);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
     transform: translateY(-2px);
 }
 
@@ -411,24 +439,27 @@ button {
 }
 
 .card-1 {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.8), rgba(67, 56, 202, 0.9));
+    background: var(--primary-color);
     transform: translateZ(40px) rotate(-10deg) translateX(-40px);
     z-index: 3;
     overflow: hidden;
+    box-shadow: var(--shadow-lg);
 }
 
 .card-2 {
-    background: linear-gradient(135deg, rgba(236, 72, 153, 0.8), rgba(190, 24, 93, 0.9));
+    background: var(--primary-dark);
     transform: translateZ(20px) rotate(5deg) translateY(30px);
     z-index: 2;
     animation: float 6s ease-in-out infinite 1s;
+    box-shadow: var(--shadow-md);
 }
 
 .card-3 {
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.8), rgba(109, 40, 217, 0.9));
+    background: var(--secondary-color);
     transform: translateZ(0px) rotate(-5deg) translateX(40px) translateY(-20px);
     z-index: 1;
     animation: float 6s ease-in-out infinite 2s;
+    box-shadow: var(--shadow-sm);
 }
 
 .card-content {
@@ -444,14 +475,7 @@ button {
 }
 
 .card-glow {
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
-    transform: rotate(30deg);
-    pointer-events: none;
+    display: none;
 }
 
 .card-top {
@@ -583,7 +607,7 @@ button {
    Features Section
    ============================================ */
 .features {
-    background: linear-gradient(to bottom, transparent, rgba(15, 23, 42, 0.5));
+    background: var(--bg-body);
 }
 
 .section-header {
@@ -613,45 +637,23 @@ button {
 }
 
 .feature-card {
-    background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
     padding: var(--spacing-xl);
-    border-radius: var(--radius-xl);
+    border-radius: var(--radius-lg);
     transition: all var(--transition-base);
-    position: relative;
-    overflow: hidden;
-}
-
-.feature-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
-    opacity: 0;
-    transition: opacity var(--transition-base);
+    box-shadow: var(--shadow-sm);
 }
 
 .feature-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(99, 102, 241, 0.3);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-}
-
-.feature-card:hover::before {
-    opacity: 1;
+    transform: translateY(-4px);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-lg);
 }
 
 .feature-icon {
     font-size: 3rem;
     margin-bottom: var(--spacing-md);
-    background: var(--gradient-primary);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     display: inline-block;
 }
 
@@ -750,20 +752,22 @@ button {
 }
 
 .network-badge {
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--bg-card);
     padding: var(--spacing-lg);
     border-radius: var(--radius-lg);
-    text-align: center;
-    border: 1px solid var(--glass-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
     transition: all var(--transition-base);
     cursor: default;
+    box-shadow: var(--shadow-sm);
 }
 
 .network-badge:hover {
-    background: rgba(255, 255, 255, 0.08);
     border-color: var(--primary-color);
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
 .network-name {
@@ -780,17 +784,134 @@ button {
     margin: 0 auto;
     display: block;
     object-fit: contain;
-    filter: brightness(0) invert(1);
     opacity: 0.9;
     transition: all var(--transition-base);
 }
 
 .network-badge:hover .network-logo {
-    filter: brightness(0) invert(1);
     opacity: 1;
     transform: scale(1.05);
 }
 
+
+/* ============================================
+   Waitlist Section
+   ============================================ */
+.waitlist {
+    padding: var(--spacing-2xl) 0;
+    background: var(--bg-surface);
+}
+
+.waitlist-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.waitlist-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+}
+
+.waitlist-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.7;
+}
+
+.waitlist-form {
+    margin-bottom: var(--spacing-xl);
+}
+
+.form-group {
+    display: flex;
+    gap: var(--spacing-sm);
+    max-width: 500px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.form-input {
+    flex: 1;
+    min-width: 250px;
+    padding: 0.875rem 1.5rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-full);
+    font-size: 1rem;
+    font-family: var(--font-primary);
+    transition: all var(--transition-base);
+    background: var(--bg-card);
+    color: var(--text-primary);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-glow);
+}
+
+.form-input::placeholder {
+    color: var(--text-muted);
+}
+
+.form-input.error {
+    border-color: #dc3545;
+}
+
+.form-message {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: none;
+}
+
+.form-message.success {
+    display: block;
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-message.error {
+    display: block;
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.waitlist-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-xl);
+    border-top: 1px solid var(--border-color);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
 
 /* ============================================
    CTA Section
@@ -800,14 +921,12 @@ button {
 }
 
 .cta .container {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(236, 72, 153, 0.2));
+    background: var(--bg-surface);
     border-radius: var(--radius-xl);
     padding: var(--spacing-2xl) var(--spacing-lg);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
+    border: 2px solid var(--primary-color);
     text-align: center;
-    position: relative;
-    overflow: hidden;
+    box-shadow: var(--shadow-lg);
 }
 
 .cta-content {
@@ -841,9 +960,8 @@ button {
    Footer
    ============================================ */
 .footer {
-    background-color: #020617;
-    /* Slate 950 */
-    border-top: 1px solid var(--glass-border);
+    background-color: var(--bg-surface);
+    border-top: 1px solid var(--border-color);
     padding: var(--spacing-2xl) 0 var(--spacing-md);
     margin-top: var(--spacing-2xl);
 }
@@ -863,6 +981,18 @@ button {
     font-weight: 800;
     margin-bottom: var(--spacing-md);
     color: var(--text-primary);
+}
+
+.footer-logo-image {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 22%;
+}
+
+.footer-logo-text {
+    font-size: 1.5rem;
+    font-weight: 800;
 }
 
 .footer-description {

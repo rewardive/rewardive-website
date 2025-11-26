@@ -11,6 +11,41 @@ const navToggle = document.getElementById('nav-toggle');
 const navMenu = document.getElementById('nav-menu');
 const navClose = document.getElementById('nav-close');
 const navLinks = document.querySelectorAll('.nav-link');
+const themeToggle = document.getElementById('theme-toggle');
+
+// ============================================
+// Theme Toggle
+// ============================================
+/**
+ * Toggle between light and dark theme
+ */
+if (themeToggle) {
+    // Check for saved theme preference or default to 'light'
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    // Update icon based on current theme
+    updateThemeIcon(currentTheme);
+
+    themeToggle.addEventListener('click', () => {
+        const theme = document.documentElement.getAttribute('data-theme');
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+    });
+}
+
+/**
+ * Update theme toggle icon
+ */
+function updateThemeIcon(theme) {
+    const themeIcon = document.querySelector('.theme-icon');
+    if (themeIcon) {
+        themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+    }
+}
 
 // ============================================
 // Mobile Navigation
@@ -115,6 +150,121 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('scroll', scrollReveal);
+
+// ============================================
+// Waitlist Form Handling
+// ============================================
+const waitlistForm = document.getElementById('waitlist-form');
+const emailInput = document.getElementById('email');
+const formMessage = document.getElementById('form-message');
+const waitlistCount = document.getElementById('waitlist-count');
+
+if (waitlistForm) {
+    waitlistForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Reset message
+        formMessage.className = 'form-message';
+        formMessage.textContent = '';
+
+        // Validate email
+        const email = emailInput.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!email) {
+            showFormMessage('Please enter your email address.', 'error');
+            emailInput.classList.add('error');
+            return;
+        }
+
+        if (!emailRegex.test(email)) {
+            showFormMessage('Please enter a valid email address.', 'error');
+            emailInput.classList.add('error');
+            return;
+        }
+
+        emailInput.classList.remove('error');
+
+        // Disable submit button
+        const submitBtn = waitlistForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Joining...';
+
+        // Simulate API call (replace with actual API endpoint)
+        try {
+            // TODO: Replace with actual API call
+            // const response = await fetch('/api/waitlist', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify({ email })
+            // });
+
+            // Simulate delay
+            await new Promise(resolve => setTimeout(resolve, 1000));
+
+            // Success
+            showFormMessage('Thank you! You\'ve been added to the waitlist. Check your email for confirmation.', 'success');
+            emailInput.value = '';
+
+            // Update waitlist count
+            updateWaitlistCount();
+
+            // Track event
+            trackEvent('waitlist_join', { email_domain: email.split('@')[1] });
+
+        } catch (error) {
+            showFormMessage('Oops! Something went wrong. Please try again.', 'error');
+            console.error('Waitlist submission error:', error);
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+        }
+    });
+
+    // Remove error on input
+    emailInput.addEventListener('input', () => {
+        emailInput.classList.remove('error');
+        formMessage.className = 'form-message';
+    });
+}
+
+/**
+ * Show form message
+ */
+function showFormMessage(message, type) {
+    formMessage.textContent = message;
+    formMessage.className = `form-message ${type}`;
+}
+
+/**
+ * Update waitlist count with animation
+ */
+function updateWaitlistCount() {
+    if (waitlistCount) {
+        const currentCount = parseInt(waitlistCount.textContent.replace(/,/g, ''));
+        const newCount = currentCount + 1;
+        animateCount(waitlistCount, currentCount, newCount, 1000);
+    }
+}
+
+/**
+ * Animate number counting
+ */
+function animateCount(element, start, end, duration) {
+    const range = end - start;
+    const increment = range / (duration / 16);
+    let current = start;
+
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= end) {
+            current = end;
+            clearInterval(timer);
+        }
+        element.textContent = Math.floor(current).toLocaleString();
+    }, 16);
+}
 
 // ============================================
 // Form Validation (if forms are added later)

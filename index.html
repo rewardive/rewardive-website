@@ -81,8 +81,8 @@
     <header class="header" id="header">
         <nav class="nav container">
             <a href="index.html" class="nav-logo">
-                <span class="logo-icon">💳</span>
-                Rewardive
+                <img src="assets/images/logo.png" alt="Rewardive" class="logo-image">
+                <span class="logo-text">Rewardive</span>
             </a>
 
             <div class="nav-menu" id="nav-menu">
@@ -101,6 +101,10 @@
                     <span>&times;</span>
                 </div>
             </div>
+
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                <span class="theme-icon">🌙</span>
+            </button>
 
             <div class="nav-toggle" id="nav-toggle">
                 <span></span>
@@ -124,8 +128,8 @@
                         Never miss out on discounts, vouchers, and exclusive deals from your banks and card networks.
                     </p>
                     <div class="hero-buttons">
-                        <a href="#features" class="btn btn-primary">Explore Features</a>
-                        <a href="#how-it-works" class="btn btn-secondary">Learn More</a>
+                        <a href="#waitlist" class="btn btn-primary">Join Waitlist</a>
+                        <a href="#features" class="btn btn-secondary">Explore Features</a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -297,7 +301,7 @@
                         <img src="assets/images/logos/mastercard.svg" alt="Mastercard" class="network-logo">
                     </div>
                     <div class="network-badge">
-                        <img src="assets/images/logos/rupay.png" alt="RuPay" class="network-logo">
+                        <img src="assets/images/logos/rupay.svg" alt="RuPay" class="network-logo">
                     </div>
                     <div class="network-badge">
                         <img src="assets/images/logos/amex.svg" alt="American Express" class="network-logo">
@@ -357,6 +361,50 @@
             </div>
         </section>
 
+        <!-- Waitlist Section -->
+        <section class="waitlist section" id="waitlist">
+            <div class="container">
+                <div class="waitlist-content">
+                    <h2 class="waitlist-title">Join the Waitlist</h2>
+                    <p class="waitlist-description">
+                        Be the first to know when Rewardive launches. Get exclusive early access and never miss a deal again.
+                    </p>
+
+                    <form class="waitlist-form" id="waitlist-form">
+                        <div class="form-group">
+                            <input
+                                type="email"
+                                class="form-input"
+                                id="email"
+                                placeholder="Enter your email address"
+                                required
+                                autocomplete="email"
+                            >
+                            <button type="submit" class="btn btn-primary">
+                                Join Waitlist
+                            </button>
+                        </div>
+                        <div class="form-message" id="form-message"></div>
+                    </form>
+
+                    <div class="waitlist-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" id="waitlist-count">2,547</span>
+                            <span class="stat-label">People waiting</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Banks supported</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10K+</span>
+                            <span class="stat-label">Active offers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- CTA Section -->
         <section class="cta section" id="download">
             <div class="container">
@@ -366,7 +414,7 @@
                         Join thousands of smart spenders who never miss a deal.
                     </p>
                     <div class="cta-buttons">
-                        <a href="#" class="btn btn-primary btn-large">Download App</a>
+                        <a href="#waitlist" class="btn btn-primary btn-large">Join Waitlist</a>
                     </div>
                 </div>
             </div>
@@ -379,8 +427,8 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <div class="footer-logo">
-                        <span class="logo-icon">💳</span>
-                        Rewardive
+                        <img src="assets/images/logo.png" alt="Rewardive" class="footer-logo-image">
+                        <span class="footer-logo-text">Rewardive</span>
                     </div>
                     <p class="footer-description">
                         Your ultimate companion for discovering and maximizing credit card, debit card, and bank offers.
