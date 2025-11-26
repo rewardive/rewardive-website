@@ -208,23 +208,6 @@ Update `sitemap.xml` with your actual domain and dates.
 - MIME type sniffing prevention
 - HTTPS enforcement (when enabled)
 
-## Analytics Integration
-
-To add analytics, include your tracking code in the `<head>` section of each HTML file:
-
-**Google Analytics 4:**
-
-```html
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
-</script>
-```
-
 ## License
 
 Copyright © 2025 Rewardive. All rights reserved.
