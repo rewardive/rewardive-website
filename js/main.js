@@ -12,6 +12,7 @@ const navMenu = document.getElementById('nav-menu');
 const navClose = document.getElementById('nav-close');
 const navLinks = document.querySelectorAll('.nav-link');
 const themeToggle = document.getElementById('theme-toggle');
+const themeToggleMobile = document.getElementById('theme-toggle-mobile');
 
 // ============================================
 // Theme Toggle
@@ -19,32 +20,29 @@ const themeToggle = document.getElementById('theme-toggle');
 /**
  * Toggle between light and dark theme
  */
-if (themeToggle) {
-    // Check for saved theme preference or default to 'light'
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', currentTheme);
-
-    // Update icon based on current theme
-    updateThemeIcon(currentTheme);
-
-    themeToggle.addEventListener('click', () => {
-        const theme = document.documentElement.getAttribute('data-theme');
-        const newTheme = theme === 'light' ? 'dark' : 'light';
-
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme);
-    });
-}
+// Check for saved theme preference or default to 'light'
+const currentTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', currentTheme);
 
 /**
- * Update theme toggle icon
+ * Toggle theme function
  */
-function updateThemeIcon(theme) {
-    const themeIcon = document.querySelector('.theme-icon');
-    if (themeIcon) {
-        themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
-    }
+function toggleTheme() {
+    const theme = document.documentElement.getAttribute('data-theme');
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+}
+
+// Desktop theme toggle
+if (themeToggle) {
+    themeToggle.addEventListener('click', toggleTheme);
+}
+
+// Mobile theme toggle
+if (themeToggleMobile) {
+    themeToggleMobile.addEventListener('click', toggleTheme);
 }
 
 // ============================================
@@ -108,6 +106,33 @@ function scrollHeader() {
             header.classList.remove('scrolled');
         }
     }
+}
+
+window.addEventListener('scroll', scrollHeader);
+
+// ============================================
+// Active Section Highlighting
+// ============================================
+/**
+ * Highlight active section in navigation on scroll
+ */
+function highlightActiveSection() {
+    const sections = document.querySelectorAll('section[id]');
+    const scrollY = window.pageYOffset;
+
+    sections.forEach(section => {
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - 100;
+        const sectionId = section.getAttribute('id');
+        const navLink = document.querySelector(`.nav-link[href*="${sectionId}"]`);
+
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            if (navLink) {
+                document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+                navLink.classList.add('active');
+            }
+        }
+    });
 }
 
 // Only run on home page
