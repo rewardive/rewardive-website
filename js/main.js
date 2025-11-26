@@ -75,65 +75,6 @@ function scrollHeader() {
     }
 }
 
-window.addEventListener('scroll', scrollHeader);
-
-// ============================================
-// Smooth Scrolling for Anchor Links
-// ============================================
-/**
- * Smooth scroll to section when clicking anchor links
- */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-
-        // Skip if href is just "#"
-        if (href === '#' || href === '#download') {
-            e.preventDefault();
-            return;
-        }
-
-        const target = document.querySelector(href);
-
-        if (target) {
-            e.preventDefault();
-
-            const headerHeight = header ? header.offsetHeight : 0;
-            const targetPosition = target.offsetTop - headerHeight - 20;
-
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// ============================================
-// Active Section Highlighting
-// ============================================
-/**
- * Highlight the active section in navigation based on scroll position
- */
-function highlightActiveSection() {
-    const sections = document.querySelectorAll('.section[id]');
-    const scrollY = window.pageYOffset;
-
-    sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
-        const sectionId = section.getAttribute('id');
-        const navLink = document.querySelector(`.nav-link[href*="${sectionId}"]`);
-
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            if (navLink) {
-                navLinks.forEach(link => link.classList.remove('active'));
-                navLink.classList.add('active');
-            }
-        }
-    });
-}
-
 // Only run on home page
 if (document.querySelector('.hero')) {
     window.addEventListener('scroll', highlightActiveSection);

@@ -117,7 +117,7 @@
             <div class="hero-container container">
                 <div class="hero-content">
                     <h1 class="hero-title">
-                        Maximize Your <span class="gradient-text">Card Benefits</span>
+                        Maximize Your <br> <span class="gradient-text">Card Benefits</span>
                     </h1>
                     <p class="hero-description">
                         Discover all credit card, debit card, and bank offers in one place.
@@ -131,9 +131,46 @@
                 <div class="hero-image">
                     <div class="hero-illustration">
                         <div class="card-stack">
-                            <div class="card card-1">💳</div>
-                            <div class="card card-2">🏦</div>
-                            <div class="card card-3">🎁</div>
+                            <!-- Back Card (Decorative) -->
+                            <div class="card card-3"></div>
+                            <!-- Middle Card (Decorative) -->
+                            <div class="card card-2"></div>
+                            <!-- Front Card (Main) -->
+                            <div class="card card-1">
+                                <div class="card-glow"></div>
+                                <div class="card-content">
+                                    <div class="card-top">
+                                        <div class="card-chip">
+                                            <div class="chip-line"></div>
+                                            <div class="chip-line"></div>
+                                            <div class="chip-line"></div>
+                                            <div class="chip-line"></div>
+                                        </div>
+                                        <div class="card-logo">
+                                            <span class="circle red"></span>
+                                            <span class="circle orange"></span>
+                                        </div>
+                                    </div>
+                                    <div class="card-middle">
+                                        <div class="card-number">
+                                            <span>4582</span>
+                                            <span>••••</span>
+                                            <span>••••</span>
+                                            <span>8924</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-bottom">
+                                        <div class="card-info">
+                                            <span class="card-label">Card Holder</span>
+                                            <span class="card-value">John Appleseed</span>
+                                        </div>
+                                        <div class="card-info">
+                                            <span class="card-label">Expires</span>
+                                            <span class="card-value">12/28</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -215,9 +252,10 @@
                 <div class="steps-container">
                     <div class="step">
                         <div class="step-number">1</div>
-                        <h3 class="step-title">Add Your Cards</h3>
+                        <h3 class="step-title">Add Your Card Types</h3>
                         <p class="step-description">
-                            Securely add your credit and debit cards to your Rewardive profile.
+                            Simply select your card types and networks (like HDFC Visa or ICICI Mastercard).
+                            No sensitive card details required.
                         </p>
                     </div>
 
@@ -251,36 +289,76 @@
                 </div>
 
                 <div class="networks-grid">
+                    <!-- Card Networks -->
                     <div class="network-badge">
-                        <span class="network-name">Visa</span>
+                        <img src="assets/images/logos/visa.svg" alt="Visa" class="network-logo">
                     </div>
                     <div class="network-badge">
-                        <span class="network-name">Mastercard</span>
+                        <img src="assets/images/logos/mastercard.svg" alt="Mastercard" class="network-logo">
                     </div>
                     <div class="network-badge">
-                        <span class="network-name">RuPay</span>
+                        <img src="assets/images/logos/rupay.png" alt="RuPay" class="network-logo">
                     </div>
                     <div class="network-badge">
-                        <span class="network-name">American Express</span>
+                        <img src="assets/images/logos/amex.svg" alt="American Express" class="network-logo">
+                    </div>
+
+                    <!-- Indian Banks - Public Sector -->
+                    <div class="network-badge">
+                        <img src="assets/images/logos/sbi.svg" alt="State Bank of India" class="network-logo">
                     </div>
                     <div class="network-badge">
-                        <span class="network-name">HDFC Bank</span>
+                        <img src="assets/images/logos/pnb.svg" alt="Punjab National Bank" class="network-logo">
                     </div>
                     <div class="network-badge">
-                        <span class="network-name">ICICI Bank</span>
+                        <img src="assets/images/logos/bob.png" alt="Bank of Baroda" class="network-logo">
                     </div>
                     <div class="network-badge">
-                        <span class="network-name">SBI</span>
+                        <img src="assets/images/logos/canara.svg" alt="Canara Bank" class="network-logo">
                     </div>
                     <div class="network-badge">
-                        <span class="network-name">Axis Bank</span>
+                        <img src="assets/images/logos/unionbank.svg" alt="Union Bank of India" class="network-logo">
+                    </div>
+
+                    <!-- Indian Banks - Private Sector -->
+                    <div class="network-badge">
+                        <img src="assets/images/logos/hdfc.svg" alt="HDFC Bank" class="network-logo">
+                    </div>
+                    <div class="network-badge">
+                        <img src="assets/images/logos/icici.svg" alt="ICICI Bank" class="network-logo">
+                    </div>
+                    <div class="network-badge">
+                        <img src="assets/images/logos/axis.svg" alt="Axis Bank" class="network-logo">
+                    </div>
+                    <div class="network-badge">
+                        <img src="assets/images/logos/kotak.svg" alt="Kotak Mahindra Bank" class="network-logo">
+                    </div>
+                    <div class="network-badge">
+                        <img src="assets/images/logos/indusind.svg" alt="IndusInd Bank" class="network-logo">
+                    </div>
+                    <div class="network-badge">
+                        <img src="assets/images/logos/yesbank.svg" alt="Yes Bank" class="network-logo">
+                    </div>
+                    <div class="network-badge">
+                        <img src="assets/images/logos/idfc.svg" alt="IDFC First Bank" class="network-logo">
+                    </div>
+                    <div class="network-badge">
+                        <img src="assets/images/logos/federal.svg" alt="Federal Bank" class="network-logo">
+                    </div>
+                    <div class="network-badge">
+                        <img src="assets/images/logos/rbl.svg" alt="RBL Bank" class="network-logo">
+                    </div>
+
+                    <!-- Foreign Banks -->
+                    <div class="network-badge">
+                        <img src="assets/images/logos/standardchartered.svg" alt="Standard Chartered Bank" class="network-logo">
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- CTA Section -->
-        <section class="cta section">
+        <section class="cta section" id="download">
             <div class="container">
                 <div class="cta-content">
                     <h2 class="cta-title">Ready to Maximize Your Rewards?</h2>
@@ -288,7 +366,7 @@
                         Join thousands of smart spenders who never miss a deal.
                     </p>
                     <div class="cta-buttons">
-                        <a href="#download" class="btn btn-primary btn-large">Download App</a>
+                        <a href="#" class="btn btn-primary btn-large">Download App</a>
                     </div>
                 </div>
             </div>
