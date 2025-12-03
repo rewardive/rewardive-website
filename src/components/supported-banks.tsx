@@ -121,7 +121,7 @@ export function SupportedBanks() {
             {banks.map((bank, index) => (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-xl border border-border/50 bg-card/30 backdrop-blur-sm p-6 hover:shadow-lg hover:border-border transition-all duration-300 hover:-translate-y-1 hover:bg-card/50"
+                className="group relative overflow-hidden rounded-xl border border-border/50 bg-card/30 backdrop-blur-sm p-6 hover:shadow-lg hover:border-border transition-all duration-300 hover:-translate-y-1 hover:bg-card/50 animate-in fade-in slide-in-from-bottom-4 duration-500 fill-mode-backwards"
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
                 {/* Gradient overlay on hover */}

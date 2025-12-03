@@ -9,3 +9,5 @@ out/
 .env.development.local
 .vercel
 *.tsbuildinfo
+
+*.bat

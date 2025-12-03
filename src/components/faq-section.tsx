@@ -10,28 +10,28 @@ import Link from "next/link";
 export function FAQSection() {
   const faqs = [
     {
-      question: "What kind of businesses is this template built for?",
-      answer: "Clario is designed for SaaS tools, dashboards, fintech platforms, or any digital product that needs a modern, conversion-focused landing page. It's fully customizable to fit a wide range of web-based services.",
+      question: "How does Rewardive track my credit card offers?",
+      answer: "Rewardive uses advanced algorithms to scan and aggregate offers from major banks and card networks. We also allow you to scan UPI QR codes to instantly see which of your cards offers the best rewards for that specific merchant.",
     },
     {
-      question: "Is the template mobile-friendly and responsive?",
-      answer: "Absolutely. The layout adapts beautifully to all screen sizes, including desktops, tablets, and smartphones. Every section is designed to deliver a seamless experience across devices.",
+      question: "Is my financial data safe?",
+      answer: "Absolutely. We prioritize your security and privacy. Rewardive does not store your card numbers or sensitive banking credentials. We only track offer data and card types to provide recommendations.",
     },
     {
-      question: "Can I use this template without coding skills?",
-      answer: "Yes — the template is fully editable in Framer with drag-and-drop tools. No coding knowledge is required to update text, swap images, or adjust layouts.",
+      question: "Which banks and cards are supported?",
+      answer: "We support over 20+ major banks including HDFC, ICICI, SBI, Axis, and Amex, covering Visa, Mastercard, and RuPay networks. We are constantly adding more partners to our platform.",
     },
     {
-      question: "Will I get access to future updates?",
-      answer: "Yes. Once purchased, you'll automatically receive any future improvements or optimizations we make to the template. Your version stays up-to-date with best practices.",
+      question: "Is the app free to use?",
+      answer: "Yes, the core features of Rewardive, including offer discovery and UPI scanning, are completely free for users. We may introduce premium features for advanced analytics in the future.",
     },
     {
-      question: "Can I use this template for commercial projects?",
-      answer: "Definitely. Clario is licensed for both personal and commercial use, so you can build client websites or launch your own product without any licensing issues.",
+      question: "Can I track milestone benefits?",
+      answer: "Definitely. Rewardive allows you to track progress towards annual fee waivers, bonus reward points, and other milestone-based benefits so you never miss a target.",
     },
     {
-      question: "How can I get support if I run into issues?",
-      answer: "We're here to help. If you have questions, you can reach us directly at hello@kadirov.design. We usually respond within 24 hours.",
+      question: "How do I get support if I have issues?",
+      answer: "We're here to help. If you have questions or need assistance, you can reach out to our support team directly through the app or email us at support@rewardive.com.",
     },
   ];
 

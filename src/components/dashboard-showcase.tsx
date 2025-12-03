@@ -9,23 +9,23 @@ export function DashboardShowcase() {
 
   const tabs = [
     {
-      title: "Smart Dashboard",
-      description: "See all your accounts in one view — balances, spending, and goals.",
+      title: "Rewards Dashboard",
+      description: "See all your credit card rewards and cashback in one unified view.",
       icon: LayoutDashboard,
     },
     {
-      title: "Cashflow Overview",
-      description: "Track your daily income and expenses to understand your financial flow.",
+      title: "Offer Tracking",
+      description: "Track live offers across all your cards and never miss a deal.",
       icon: TrendingUp,
     },
     {
-      title: "Spending Breakdown",
-      description: "See exactly how your money is split across categories.",
+      title: "Spending Insights",
+      description: "Analyze which cards give you the best returns for your spending.",
       icon: PieChart,
     },
     {
-      title: "Savings Goal",
-      description: "Stay focused on your savings targets and follow your progress.",
+      title: "Milestone Goals",
+      description: "Track progress towards fee waivers and bonus reward milestones.",
       icon: Target,
     },
   ];
@@ -35,10 +35,10 @@ export function DashboardShowcase() {
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-            See your money in real time, clearly.
+            Maximize your rewards in real time.
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            Clario shows your income, spending, and goals in simple visuals you can act on — right away.
+            Rewardive shows your points, cashback, and exclusive offers in simple visuals you can act on — right away.
           </p>
         </div>
 
@@ -92,7 +92,7 @@ export function DashboardShowcase() {
         <div className="mt-16 text-center">
           <div className="inline-flex items-center rounded-full bg-background px-6 py-3 shadow-sm border">
             <span className="text-sm font-medium text-foreground">
-              ✨ Trusted by 3k+ Freelancers
+              ✨ Trusted by 10k+ Smart Spenders
             </span>
           </div>
         </div>

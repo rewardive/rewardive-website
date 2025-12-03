@@ -4,29 +4,29 @@ import { Check, X } from "lucide-react";
 export function ComparisonTable() {
   const comparisons = [
     {
-      feature: "Tracking",
-      other: "Messy spreadsheets, manual tracking",
-      clario: "Smart dashboard, real-time updates",
+      feature: "MCC Code Detection",
+      other: "Manual lookup",
+      rewardive: "Instant detection via UPI QR",
     },
     {
-      feature: "Pricing",
-      other: "Complicated pricing, hidden fees",
-      clario: "Simple, transparent pricing",
+      feature: "Bank-Specific Offers",
+      other: "Generic cashback apps",
+      rewardive: "Tailored to your specific cards",
     },
     {
-      feature: "Automation",
-      other: "Limited automation, manual workflows",
-      clario: "Automated reports & smart alerts",
+      feature: "Real-time Updates",
+      other: "Static data",
+      rewardive: "Live offer tracking",
     },
     {
-      feature: "Collaboration",
-      other: "No team collaboration",
-      clario: "Team-friendly, sync accounts easily",
+      feature: "Card Network Coverage",
+      other: "Limited networks",
+      rewardive: "Visa, Mastercard, RuPay, Amex",
     },
     {
-      feature: "Support",
-      other: "Generic support, slow replies",
-      clario: "Priority support, fast response",
+      feature: "Smart Search",
+      other: "Basic filtering",
+      rewardive: "Smart search by merchant/category",
     },
   ];
 
@@ -35,7 +35,7 @@ export function ComparisonTable() {
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-16 text-center">
           <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-blue-600 dark:text-blue-400">
-            Why Clario?
+            Why Rewardive?
           </p>
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
             There's a smarter way to manage money
@@ -50,7 +50,7 @@ export function ComparisonTable() {
                   <tr className="border-b bg-gray-100 dark:bg-muted">
                     <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Feature</th>
                     <th className="px-6 py-4 text-left text-sm font-semibold text-muted-foreground">Other Tools</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-blue-600 dark:text-blue-400">Clario</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-blue-600 dark:text-blue-400">Rewardive</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -66,7 +66,7 @@ export function ComparisonTable() {
                       <td className="px-6 py-4">
                         <div className="flex items-start gap-2">
                           <Check className="h-5 w-5 shrink-0 text-green-500 mt-0.5" />
-                          <span className="text-sm text-foreground">{item.clario}</span>
+                          <span className="text-sm text-foreground">{item.rewardive}</span>
                         </div>
                       </td>
                     </tr>

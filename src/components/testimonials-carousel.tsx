@@ -3,32 +3,32 @@ import { Card, CardContent } from "@/components/ui/card";
 export function TestimonialsCarousel() {
   const testimonials = [
     {
-      quote: "With Clario, I finally stopped stressing about my cash flow. I know where my money is going — and I'm actually saving.",
+      quote: "With Rewardive, I finally stopped missing out on credit card offers. I know exactly which card to use — and I'm maximizing my cashback.",
       author: "Danielle M.",
       role: "Freelance UX Designer",
     },
     {
-      quote: "Clario made my finances feel simple. Everything's in one place.",
+      quote: "Rewardive made tracking rewards simple. All my offers are in one place.",
       author: "Alex T.",
       role: "Product Manager",
     },
     {
-      quote: "I finally set a savings goal and actually stuck to it.",
+      quote: "I finally hit my milestone spend and got my annual fee waived.",
       author: "Reema K.",
       role: "Marketing Consultant",
     },
     {
-      quote: "No more spreadsheet chaos. Just clean insights.",
+      quote: "No more searching through bank emails. Just clean offer insights.",
       author: "Jonas W.",
       role: "Startup Founder",
     },
     {
-      quote: "It feels like Clario understands how I think about money.",
+      quote: "It feels like Rewardive understands how to maximize my wallet.",
       author: "Samira L.",
       role: "E-commerce Seller",
     },
     {
-      quote: "It's the only finance tool I open daily — and enjoy using.",
+      quote: "It's the only rewards app I open daily — and actually save money with.",
       author: "Marco G.",
       role: "Freelance Developer",
     },
@@ -39,10 +39,10 @@ export function TestimonialsCarousel() {
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-            Loved by individuals and small teams
+            Loved by smart spenders everywhere
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            People across industries trust Clario to manage money, reduce stress, and make smarter decisions — all in one simple dashboard.
+            Smart spenders trust Rewardive to maximize rewards, discover offers, and make smarter payment decisions — all in one simple app.
           </p>
         </div>
 
