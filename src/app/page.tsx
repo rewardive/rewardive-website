@@ -6,6 +6,8 @@ import { SupportedBanks } from "@/components/supported-banks";
 import { CTASection } from "@/components/cta-section";
 import { Footer } from "@/components/footer";
 
+import { FAQSection } from "@/components/faq-section";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
@@ -14,6 +16,7 @@ export default function Home() {
       <FeaturesGrid />
       <HowItWorks />
       <SupportedBanks />
+      <FAQSection />
       <CTASection />
       <Footer />
     </main>

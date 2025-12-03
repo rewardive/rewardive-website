@@ -63,7 +63,7 @@ export function FAQSection() {
 
         <div className="mt-12 text-center">
           <Button size="lg" variant="outline" asChild>
-            <Link href="#contact">Contact us</Link>
+            <Link href="#download">Download App</Link>
           </Button>
         </div>
       </div>
