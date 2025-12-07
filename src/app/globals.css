@@ -139,7 +139,6 @@ body {
 }
 
 /* Prevent theme transition bounce by stabilizing layout */
-html.dark,
-html:not(.dark) {
-  color-scheme: inherit;
+html {
+  color-scheme: light dark;
 }

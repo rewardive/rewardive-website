@@ -8,7 +8,6 @@ import {
   Bell, 
   Search, 
   Sparkles, 
-  ArrowRight, 
   CheckCircle2,
   Building2,
   Gift,
@@ -189,11 +188,6 @@ export function FeaturesGrid() {
                   <Gift className="h-4 w-4" />
                   <span>1000+ Active Offers</span>
                 </div>
-                {/* View button hidden until details page ready */}
-                {/* <div className="flex items-center gap-2 text-xs text-muted-foreground group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
-                  <span>Browse vouchers</span>
-                  <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
-                </div> */}
               </div>
             </CardContent>
           </Card>
@@ -216,11 +210,6 @@ export function FeaturesGrid() {
                   <Zap className="h-4 w-4" />
                   <span>Instant Notifications</span>
                 </div>
-                {/* View button hidden until details page ready */}
-                {/* <div className="flex items-center gap-2 text-xs text-muted-foreground group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors">
-                  <span>Configure alerts</span>
-                  <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
-                </div> */}
               </div>
             </CardContent>
           </Card>
@@ -243,11 +232,6 @@ export function FeaturesGrid() {
                   <Zap className="h-4 w-4" />
                   <span>AI-Powered Search</span>
                 </div>
-                {/* View button hidden until details page ready */}
-                {/* <div className="flex items-center gap-2 text-xs text-muted-foreground group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
-                  <span>Try search</span>
-                  <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
-                </div> */}
               </div>
             </CardContent>
           </Card>
@@ -270,11 +254,6 @@ export function FeaturesGrid() {
                   <Sparkles className="h-4 w-4" />
                   <span>Smart Matching</span>
                 </div>
-                {/* View button hidden until details page ready */}
-                {/* <div className="flex items-center gap-2 text-xs text-muted-foreground group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                  <span>See recommendations</span>
-                  <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
-                </div> */}
               </div>
             </CardContent>
           </Card>
