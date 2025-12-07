@@ -4,8 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+
 
 export function FAQSection() {
   const faqs = [
@@ -38,11 +37,11 @@ export function FAQSection() {
   return (
     <section className="py-20 sm:py-32">
       <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-16 text-center">
+        <div className="mb-16">
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
             Got questions? We've got answers.
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+          <p className="max-w-2xl text-lg text-muted-foreground">
             Here's everything you need to know before getting started.
           </p>
         </div>
@@ -50,22 +49,18 @@ export function FAQSection() {
         <Accordion type="single" collapsible className="w-full">
           {faqs.map((faq, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="text-left text-lg font-semibold">
-                <span className="mr-4 text-blue-600 dark:text-blue-400">0{index + 1}</span>
-                {faq.question}
+              <AccordionTrigger className="text-lg font-semibold">
+                <div className="flex items-start text-left w-full">
+                  <span className="mr-4 text-blue-600 dark:text-blue-400">0{index + 1}</span>
+                  <span className="flex-1">{faq.question}</span>
+                </div>
               </AccordionTrigger>
-              <AccordionContent className="pl-8 text-muted-foreground">
+              <AccordionContent className="pl-8  text-muted-foreground">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
-
-        <div className="mt-12 text-center">
-          <Button size="lg" variant="outline" asChild>
-            <Link href="#download">Download App</Link>
-          </Button>
-        </div>
       </div>
     </section>
   );

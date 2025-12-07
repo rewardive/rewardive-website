@@ -29,7 +29,7 @@ export function Navbar() {
     <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4">
       <nav 
         className={`
-          flex items-center justify-between px-6 py-3 rounded-full transition-all duration-300
+          flex items-center justify-between px-6 py-3 rounded-xl transition-all duration-300
           ${scrolled || mobileMenuOpen 
             ? "bg-background/80 backdrop-blur-lg border shadow-lg w-full max-w-5xl" 
             : "bg-transparent w-full max-w-7xl border-transparent"
@@ -44,12 +44,12 @@ export function Navbar() {
 
         {/* Desktop Navigation */}
         <div className="hidden items-center space-x-8 md:flex">
-          <div className="flex items-center space-x-1 rounded-full bg-secondary/50 p-1 border border-border/50">
+          <div className="flex items-center space-x-1 rounded-xl bg-secondary/50 p-1 border border-border/50">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="px-4 py-1.5 text-sm font-medium text-muted-foreground transition-all hover:text-foreground hover:bg-background rounded-full"
+                className="px-4 py-1.5 text-sm font-medium text-muted-foreground transition-all hover:text-foreground hover:bg-background rounded-lg"
               >
                 {link.name}
               </Link>
@@ -60,12 +60,6 @@ export function Navbar() {
         {/* Desktop CTA Buttons */}
         <div className="hidden items-center space-x-4 md:flex">
           <ModeToggle />
-          <Button asChild className="rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/20">
-            <Link href="https://play.google.com/store/apps/details?id=app.rewardive" target="_blank">
-              <Download className="mr-2 h-4 w-4" />
-              Download App
-            </Link>
-          </Button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -93,14 +87,7 @@ export function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <div className="pt-2 border-t">
-              <Button asChild className="w-full rounded-full mt-2 bg-blue-600 hover:bg-blue-700 text-white">
-                <Link href="https://play.google.com/store/apps/details?id=app.rewardive" target="_blank">
-                  <Download className="mr-2 h-4 w-4" />
-                  Download App
-                </Link>
-              </Button>
-            </div>
+
         </div>
       )}
     </div>

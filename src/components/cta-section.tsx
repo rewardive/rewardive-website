@@ -1,9 +1,12 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Download, Github, Star, Users, Smartphone, CreditCard } from "lucide-react";
+import { Download, Github, Star, Users, Smartphone, CreditCard, Apple } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import testflightLogo from "../components/images/testflight.png";
+import playStoreBadge from "../components/images/playstore.png";
+import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
 
 export function CTASection() {
   const stats = [
@@ -27,7 +30,9 @@ export function CTASection() {
           {/* Badge */}
           <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm px-4 py-2 text-sm font-medium text-white">
             <Smartphone className="h-4 w-4" />
-            <span>🎉 Now Available on Google Play</span>
+            <AnimatedGradientText className="p-0 text-sm font-medium">
+              🎉 Now Available on Android & iOS
+            </AnimatedGradientText>
           </div>
 
           {/* Heading */}
@@ -45,23 +50,47 @@ export function CTASection() {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <Button 
-              size="lg" 
-              className="h-16 px-10 text-lg rounded-full bg-white text-blue-600 hover:bg-blue-50 shadow-2xl shadow-black/20 transition-all hover:scale-105 group"
-              asChild
-            >
-              <Link href="https://play.google.com/store/apps/details?id=app.rewardive" target="_blank" rel="noopener noreferrer">
-                <svg className="mr-3 h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
-                </svg>
-                Get it on Google Play
+          <div className="flex flex-col items-center justify-center gap-4 mb-16">
+            {/* Download Buttons Row */}
+            <div className="flex flex-col sm:flex-row items-center gap-4">
+              {/* Google Play Badge */}
+              <Link 
+                href="https://play.google.com/store/apps/details?id=app.rewardive" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="transition-all hover:scale-105"
+              >
+                <Image 
+                  src={playStoreBadge} 
+                  alt="Get it on Google Play" 
+                  width={220}
+                  height={65}
+                  className="h-[65px] w-auto"
+                />
               </Link>
-            </Button>
+
+              {/* TestFlight Badge */}
+              <Link 
+                href="https://testflight.apple.com/join/fTgTNCqx" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="transition-all hover:scale-105"
+              >
+                <Image 
+                  src={testflightLogo} 
+                  alt="Join us on TestFlight" 
+                  width={220}
+                  height={65}
+                  className="h-[65px] w-auto rounded-lg"
+                />
+              </Link>
+            </div>
+            
+            {/* GitHub Button */}
             <Button 
               size="lg" 
               variant="outline"
-              className="h-16 px-10 text-lg rounded-full border-2 border-white/30 bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm transition-all hover:scale-105"
+              className="h-14 px-10 rounded-lg border-2 border-white/30 bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm transition-all hover:scale-105"
               asChild
             >
               <Link href="https://github.com/rewardive" target="_blank" rel="noopener noreferrer">
