@@ -127,4 +127,18 @@
 
 html {
   scroll-behavior: smooth;
+  min-height: 100%;
+  overflow-x: hidden;
+  /* Prevent layout shift from scrollbar appearing/disappearing */
+  scrollbar-gutter: stable;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Prevent theme transition bounce by stabilizing layout */
+html {
+  color-scheme: light dark;
 }
