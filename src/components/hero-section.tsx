@@ -2,9 +2,14 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowRight, CreditCard, Sparkles, Download } from "lucide-react";
+import { ArrowRight, CreditCard, Sparkles, Download, Apple } from "lucide-react";
 import { useGsap } from "@/hooks/use-gsap";
 import { useRef } from "react";
+import Image from "next/image";
+import testflightLogo from "../components/images/testflight.png";
+import playStoreBadge from "../components/images/playstore.png";
+import { ShineBorder } from "@/components/ui/shine-border";
+import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
 
 export function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -54,12 +59,15 @@ export function HeroSection() {
           {/* Content */}
           <div className="hero-content max-w-2xl text-center lg:text-left space-y-6">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-medium text-blue-800 dark:border-blue-800 dark:bg-blue-950/50 dark:text-blue-300 shadow-lg shadow-blue-500/10">
+            <div className="inline-flex items-center gap-2 rounded-full border border-border/20 bg-secondary/30 px-4 py-2 text-sm font-medium text-muted-foreground">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-600 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
               </span>
-              <span>🎉 Now Available on Google Play</span>
+              <span>🎉</span>
+              <AnimatedGradientText className="p-0 text-sm font-medium">
+                Now Available on Android & iOS
+              </AnimatedGradientText>
               <Sparkles className="h-3.5 w-3.5" />
             </div>
 
@@ -90,20 +98,52 @@ export function HeroSection() {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
-              <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-xl shadow-blue-500/30 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/40 group" asChild>
-                <Link href="https://play.google.com/store/apps/details?id=app.rewardive" target="_blank" rel="noopener noreferrer">
-                  <Download className="mr-2 h-5 w-5 group-hover:animate-bounce transition-transform" />
-                  Download Now
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            <div className="flex flex-col sm:flex-row items-center gap-4 lg:items-start">
+              {/* Google Play Badge */}
+              <ShineBorder
+                className="bg-transparent p-0"
+                color={["#3B82F6", "#8B5CF6", "#06B6D4"]}
+                borderRadius={12}
+                borderWidth={2}
+              >
+                <Link 
+                  href="https://play.google.com/store/apps/details?id=app.rewardive" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block transition-all hover:scale-105"
+                >
+                  <Image 
+                    src={playStoreBadge} 
+                    alt="Get it on Google Play" 
+                    width={200}
+                    height={60}
+                    className="h-[58px] w-auto"
+                  />
                 </Link>
-              </Button>
-              <Button size="lg" variant="outline" className="h-14 px-8 text-lg rounded-full border-2 hover:bg-secondary/50 transition-all hover:scale-105 group" asChild>
-                <Link href="#features">
-                  Explore Features
-                  <Sparkles className="ml-2 h-4 w-4 group-hover:rotate-180 transition-transform duration-500" />
+              </ShineBorder>
+
+              {/* TestFlight Badge */}
+              <ShineBorder
+                className="bg-transparent p-0"
+                color={["#A855F7", "#EC4899", "#8B5CF6"]}
+                borderRadius={12}
+                borderWidth={2}
+              >
+                <Link 
+                  href="https://testflight.apple.com/join/fTgTNCqx" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block transition-all hover:scale-105"
+                >
+                  <Image 
+                    src={testflightLogo} 
+                    alt="Join us on TestFlight" 
+                    width={200}
+                    height={60}
+                    className="h-[58px] w-auto rounded-lg"
+                  />
                 </Link>
-              </Button>
+              </ShineBorder>
             </div>
             
             {/* Social Proof - Hidden until real-time data available */}

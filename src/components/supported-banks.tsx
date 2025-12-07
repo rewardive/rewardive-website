@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Building2, CreditCard } from "lucide-react";
+import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
 
 // Import all bank logos
 import visaLogo from '@/components/images/banks/visa.svg';
@@ -60,9 +61,11 @@ export function SupportedBanks() {
       <div className="container relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-16 text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-secondary/50 px-4 py-1.5 text-sm font-medium mb-6 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border/20 bg-secondary/30 px-4 py-1.5 text-sm font-medium mb-6 backdrop-blur-sm">
             <Building2 className="h-4 w-4 text-slate-600 dark:text-slate-400" />
-            <span>Trusted Partners</span>
+            <AnimatedGradientText className="p-0 text-sm font-medium">
+              Trusted Partners
+            </AnimatedGradientText>
           </div>
           <h2 className="mb-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
             Supported{" "}

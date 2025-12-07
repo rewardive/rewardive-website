@@ -13,6 +13,7 @@ import {
   Gift,
   Zap
 } from "lucide-react";
+import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
 
 export function FeaturesGrid() {
   return (
@@ -27,9 +28,11 @@ export function FeaturesGrid() {
       <div className="container relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Enhanced Header */}
         <div className="mb-20 text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-secondary/50 px-4 py-1.5 text-sm font-medium mb-6 backdrop-blur-sm shadow-lg">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border/20 bg-secondary/30 px-4 py-1.5 text-sm font-medium mb-6 backdrop-blur-sm">
             <Sparkles className="h-4 w-4 text-blue-600 dark:text-blue-400 animate-pulse" />
-            <span>Why Choose Rewardive?</span>
+            <AnimatedGradientText className="p-0 text-sm font-medium">
+              Why Choose Rewardive?
+            </AnimatedGradientText>
           </div>
           <h2 className="mb-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
             Everything You Need to{" "}
@@ -258,18 +261,6 @@ export function FeaturesGrid() {
             </CardContent>
           </Card>
 
-        </div>
-
-        {/* Enhanced Bottom CTA */}
-        <div className="mt-20 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-secondary/30 px-6 py-3 text-sm backdrop-blur-sm">
-            <span className="text-muted-foreground">Built with</span>
-            <span className="font-semibold text-foreground">Flutter</span>
-            <span className="text-muted-foreground">•</span>
-            <span className="font-semibold text-foreground">Clean Architecture</span>
-            <span className="text-muted-foreground">•</span>
-            <span className="font-semibold text-foreground">Riverpod</span>
-          </div>
         </div>
       </div>
     </section>
