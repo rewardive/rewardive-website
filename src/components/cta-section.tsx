@@ -1,15 +1,15 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Download, Github, Star, Users, Smartphone } from "lucide-react";
+import { Download, Github, Star, Users, Smartphone, CreditCard } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
 export function CTASection() {
   const stats = [
-    { icon: Users, value: "2K+", label: "Active Users" },
-    { icon: Star, value: "500+", label: "MCC Codes" },
-    { icon: Download, value: "10K+", label: "Active Offers" },
+    { icon: CreditCard, value: "50+", label: "Banks Supported" },
+    { icon: Star, value: "500+", label: "Spending Categories" },
+    { icon: Download, value: "10K+", label: "Active Deals & Offers" },
   ];
 
   return (

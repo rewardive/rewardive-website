@@ -106,8 +106,8 @@ export function HeroSection() {
               </Button>
             </div>
             
-            {/* Social Proof */}
-            <div className="flex items-center justify-center lg:justify-start gap-6 pt-4">
+            {/* Social Proof - Hidden until real-time data available */}
+            {/* <div className="flex items-center justify-center lg:justify-start gap-6 pt-4">
               <div className="flex -space-x-3">
                 {["Sarah", "Alex", "Maya", "John"].map((name, i) => (
                   <img
@@ -122,14 +122,14 @@ export function HeroSection() {
                 <p className="font-semibold text-foreground">2,000+ early users</p>
                 <p className="text-muted-foreground">Join the community</p>
               </div>
-            </div>
+            </div> */}
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 pt-8 border-t border-border/50">
               {[
-                { value: "500+", label: "MCC Codes" },
-                { value: "10K+", label: "Offers" },
-                { value: "<2s", label: "Scan Time" },
+                { value: "500+", label: "Spending Categories" },
+                { value: "10K+", label: "Active Deals & Offers" },
+                { value: "⚡", label: "Claim Rewards Instantly" },
               ].map((stat, i) => (
                 <div key={i} className="text-center lg:text-left">
                   <div className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">

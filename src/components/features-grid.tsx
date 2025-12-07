@@ -61,7 +61,7 @@ export function FeaturesGrid() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 lg:gap-6">
           
           {/* Feature 1 - Bank-Specific Offers (Large Card) */}
-          <Card className="feature-card md:col-span-2 lg:col-span-4 lg:row-span-2 group relative overflow-hidden border-0 bg-gradient-to-br from-violet-500/10 via-purple-500/10 to-fuchsia-500/10 dark:from-violet-500/5 dark:via-purple-500/5 dark:to-fuchsia-500/5 hover:shadow-2xl transition-all duration-500">
+          <Card className="feature-card md:col-span-2 lg:col-span-4 group relative overflow-hidden border-0 bg-gradient-to-br from-violet-500/10 via-purple-500/10 to-fuchsia-500/10 dark:from-violet-500/5 dark:via-purple-500/5 dark:to-fuchsia-500/5 hover:shadow-2xl transition-all duration-500">
             <div className="absolute inset-0 bg-grid-black/[0.02] dark:bg-grid-white/[0.02]" />
             <div className="absolute top-0 right-0 w-64 h-64 bg-violet-500/20 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700" />
             
@@ -91,11 +91,10 @@ export function FeaturesGrid() {
                 </div>
               </div>
 
-              {/* Clean Visual Element - Bank Grid */}
-              <div className="mt-8 relative">
+              {/* Bank Card Grid - Hidden for now */}
+              {/* <div className="mt-8 relative">
                 <div className="rounded-2xl bg-gradient-to-br from-white/50 to-violet-50/50 dark:from-gray-900/50 dark:to-violet-950/30 backdrop-blur-sm p-6 border border-violet-200/50 dark:border-violet-800/50">
                   
-                  {/* Bank Grid */}
                   <div className="grid grid-cols-3 gap-4 mb-6">
                     {[
                       { name: "HDFC", color: "bg-gradient-to-br from-blue-600 to-blue-700" },
@@ -109,19 +108,15 @@ export function FeaturesGrid() {
                         key={i}
                         className="group/bank relative aspect-[3/2] rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl"
                       >
-                        {/* Bank Card */}
                         <div className={`absolute inset-0 ${bank.color} p-4 flex flex-col justify-between`}>
-                          {/* Subtle Pattern Overlay */}
                           <div className="absolute inset-0 opacity-10">
                             <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent" />
                           </div>
                           
-                          {/* Bank Name */}
                           <div className="relative">
                             <div className="text-white font-bold text-sm tracking-wide">{bank.name}</div>
                           </div>
                           
-                          {/* Card Icon */}
                           <div className="relative flex justify-end">
                             <div className="h-6 w-6 rounded bg-white/20 backdrop-blur-sm flex items-center justify-center">
                               <CreditCard className="h-3 w-3 text-white" />
@@ -129,30 +124,24 @@ export function FeaturesGrid() {
                           </div>
                         </div>
                         
-                        {/* Hover Shine */}
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/bank:translate-x-full transition-transform duration-700" />
                       </div>
                     ))}
                   </div>
                   
-                  {/* Footer */}
                   <div className="flex items-center justify-between pt-4 border-t border-violet-200/50 dark:border-violet-800/50">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <div className="h-2 w-2 rounded-full bg-violet-500 animate-pulse" />
                       <span className="font-medium">20+ Banks</span>
                     </div>
-                    <div className="flex items-center gap-1 text-xs text-violet-600 dark:text-violet-400 font-medium group-hover:gap-2 transition-all">
-                      <span>View All</span>
-                      <ArrowRight className="h-3 w-3" />
-                    </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </CardContent>
           </Card>
 
           {/* Feature 2 - Card Network Deals */}
-          <Card className="feature-card md:col-span-1 lg:col-span-2 group relative overflow-hidden border-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 dark:from-blue-500/5 dark:to-cyan-500/5 hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
+          {/* <Card className="feature-card md:col-span-1 lg:col-span-2 group relative overflow-hidden border-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 dark:from-blue-500/5 dark:to-cyan-500/5 hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
             
@@ -173,13 +162,14 @@ export function FeaturesGrid() {
                     </div>
                   ))}
                 </div>
+             
                 <div className="flex items-center gap-2 text-xs text-muted-foreground group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   <span>View all networks</span>
                   <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
             </CardContent>
-          </Card>
+          </Card> */}
 
           {/* Feature 3 - Vouchers & Discounts */}
           <Card className="feature-card md:col-span-1 lg:col-span-2 group relative overflow-hidden border-0 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 dark:from-emerald-500/5 dark:to-teal-500/5 hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
@@ -199,10 +189,11 @@ export function FeaturesGrid() {
                   <Gift className="h-4 w-4" />
                   <span>1000+ Active Offers</span>
                 </div>
-                <div className="flex items-center gap-2 text-xs text-muted-foreground group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                {/* View button hidden until details page ready */}
+                {/* <div className="flex items-center gap-2 text-xs text-muted-foreground group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                   <span>Browse vouchers</span>
                   <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
-                </div>
+                </div> */}
               </div>
             </CardContent>
           </Card>
@@ -225,10 +216,11 @@ export function FeaturesGrid() {
                   <Zap className="h-4 w-4" />
                   <span>Instant Notifications</span>
                 </div>
-                <div className="flex items-center gap-2 text-xs text-muted-foreground group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors">
+                {/* View button hidden until details page ready */}
+                {/* <div className="flex items-center gap-2 text-xs text-muted-foreground group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors">
                   <span>Configure alerts</span>
                   <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
-                </div>
+                </div> */}
               </div>
             </CardContent>
           </Card>
@@ -251,10 +243,11 @@ export function FeaturesGrid() {
                   <Zap className="h-4 w-4" />
                   <span>AI-Powered Search</span>
                 </div>
-                <div className="flex items-center gap-2 text-xs text-muted-foreground group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                {/* View button hidden until details page ready */}
+                {/* <div className="flex items-center gap-2 text-xs text-muted-foreground group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
                   <span>Try search</span>
                   <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
-                </div>
+                </div> */}
               </div>
             </CardContent>
           </Card>
@@ -277,10 +270,11 @@ export function FeaturesGrid() {
                   <Sparkles className="h-4 w-4" />
                   <span>Smart Matching</span>
                 </div>
-                <div className="flex items-center gap-2 text-xs text-muted-foreground group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                {/* View button hidden until details page ready */}
+                {/* <div className="flex items-center gap-2 text-xs text-muted-foreground group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                   <span>See recommendations</span>
                   <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
-                </div>
+                </div> */}
               </div>
             </CardContent>
           </Card>
