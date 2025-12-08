@@ -43,7 +43,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative overflow-hidden bg-background pt-32 pb-20 sm:pt-40 sm:pb-32">
+    <section ref={containerRef} className="relative overflow-hidden bg-background pt-24 pb-16 sm:pt-40 sm:pb-32">
       {/* Animated Grid Background */}
       <div className="absolute inset-0 -z-10 h-full w-full bg-background bg-grid-black/[0.05] dark:bg-grid-white/[0.05]">
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
@@ -55,11 +55,11 @@ export function HeroSection() {
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-500/15 rounded-full blur-[100px] -z-10 dark:bg-cyan-500/8" />
 
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
+        <div className="grid gap-12 lg:gap-16 lg:grid-cols-2 lg:items-center">
           {/* Content */}
-          <div className="hero-content max-w-2xl text-center lg:text-left space-y-6">
+          <div className="hero-content max-w-2xl text-center lg:text-left space-y-4 sm:space-y-6">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-border/20 bg-secondary/30 px-4 py-2 text-sm font-medium text-muted-foreground">
+            <div className="inline-flex items-center gap-2 rounded-full border border-border/20 bg-secondary/30 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium text-muted-foreground whitespace-nowrap overflow-hidden max-w-full">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-600 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
@@ -72,7 +72,7 @@ export function HeroSection() {
             </div>
 
             {/* Heading */}
-            <h1 className="text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl md:text-7xl leading-[1.1]">
+            <h1 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-6xl md:text-7xl leading-tight sm:leading-[1.1]">
               Maximize Your <br />
               <span className="relative inline-block">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 dark:from-blue-400 dark:via-purple-400 dark:to-cyan-300 animate-gradient">
@@ -110,14 +110,14 @@ export function HeroSection() {
                   href="https://play.google.com/store/apps/details?id=app.rewardive" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="block transition-all hover:scale-105"
+                  className="flex items-center justify-center w-[180px] h-[56px] sm:w-[200px] sm:h-[60px] transition-all hover:scale-105"
                 >
                   <Image 
                     src={playStoreBadge} 
                     alt="Get it on Google Play" 
                     width={200}
                     height={60}
-                    className="h-[58px] w-auto"
+                    className="h-full w-full object-fill rounded-lg"
                   />
                 </Link>
               </ShineBorder>
@@ -133,14 +133,14 @@ export function HeroSection() {
                   href="https://testflight.apple.com/join/fTgTNCqx" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="block transition-all hover:scale-105"
+                  className="flex items-center justify-center w-[180px] h-[56px] sm:w-[200px] sm:h-[60px] transition-all hover:scale-105"
                 >
                   <Image 
                     src={testflightLogo} 
                     alt="Join us on TestFlight" 
                     width={200}
                     height={60}
-                    className="h-[58px] w-auto rounded-lg"
+                    className="h-full w-full object-fill rounded-lg"
                   />
                 </Link>
               </ShineBorder>
@@ -183,9 +183,9 @@ export function HeroSection() {
 
           {/* Visual - Enhanced Card */}
           <div className="hero-card flex justify-center lg:justify-end perspective-1000">
-            <div className="relative h-[340px] w-[540px] max-w-full">
+            <div className="relative h-[220px] sm:h-[340px] w-[90vw] max-w-[360px] sm:max-w-[540px] sm:w-[540px]">
               {/* Main Card with 3D effect */}
-              <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-[#1a1a1a] via-[#2d2d2d] to-[#000000] p-8 text-white shadow-2xl border border-white/10 backdrop-blur-xl z-20 transition-transform duration-500 hover:rotate-y-6 hover:rotate-x-6 preserve-3d group">
+              <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-[#1a1a1a] via-[#2d2d2d] to-[#000000] p-6 sm:p-8 text-white shadow-2xl border border-white/10 backdrop-blur-xl z-20 transition-transform duration-500 hover:rotate-y-6 hover:rotate-x-6 preserve-3d group">
                 {/* Animated Noise Texture */}
                 <div className="absolute inset-0 rounded-[2rem] opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] animate-pulse" style={{ animationDuration: '3s' }}></div>
                 
@@ -208,10 +208,10 @@ export function HeroSection() {
                   </div>
                   
                   {/* Card Details */}
-                  <div className="space-y-8">
+                  <div className="space-y-5 sm:space-y-8">
                     <div className="flex items-center gap-4">
-                      <div className="h-12 w-16 rounded-lg bg-gradient-to-r from-yellow-200 to-yellow-500 opacity-90 shadow-lg" /> {/* Chip */}
-                      <div className="text-3xl font-mono tracking-widest text-white/90 drop-shadow-lg">
+                        <div className="h-8 w-12 sm:h-12 sm:w-16 rounded-lg bg-gradient-to-r from-yellow-200 to-yellow-500 opacity-90 shadow-lg" /> {/* Chip */}
+                      <div className="text-lg sm:text-3xl font-mono tracking-widest text-white/90 drop-shadow-lg">
                         4582 •••• •••• 8924
                       </div>
                     </div>
@@ -219,11 +219,11 @@ export function HeroSection() {
                     <div className="flex justify-between items-end">
                       <div>
                         <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">Card Holder</p>
-                        <p className="font-medium tracking-wide text-lg">John Appleseed</p>
+                        <p className="font-medium tracking-wide text-base sm:text-lg">John Appleseed</p>
                       </div>
                       <div className="text-right">
                         <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">Expires</p>
-                        <p className="font-medium tracking-wide text-lg">12/28</p>
+                        <p className="font-medium tracking-wide text-base sm:text-lg">12/28</p>
                       </div>
                     </div>
                   </div>
@@ -231,9 +231,9 @@ export function HeroSection() {
               </div>
 
               {/* Floating Elements with better animations */}
-              <div className="floating-element absolute -top-12 -right-12 h-32 w-32 rounded-2xl bg-gradient-to-br from-blue-600/30 to-purple-600/30 backdrop-blur-md border border-white/20 z-10 animate-float-slow shadow-xl"></div>
-              <div className="floating-element absolute -bottom-8 -left-8 h-24 w-24 rounded-full bg-gradient-to-br from-purple-500/30 to-pink-500/30 backdrop-blur-md border border-white/20 z-10 animate-float shadow-xl"></div>
-              <div className="floating-element absolute top-1/2 -right-6 h-16 w-16 rounded-xl bg-gradient-to-br from-cyan-500/30 to-blue-500/30 backdrop-blur-md border border-white/20 z-10 animate-float shadow-xl" style={{ animationDelay: '0.5s' }}></div>
+              <div className="floating-element absolute -top-8 -right-8 sm:-top-12 sm:-right-12 h-20 w-20 sm:h-32 sm:w-32 rounded-2xl bg-gradient-to-br from-blue-600/30 to-purple-600/30 backdrop-blur-md border border-white/20 z-10 animate-float-slow shadow-xl"></div>
+              <div className="floating-element absolute -bottom-6 -left-6 sm:-bottom-8 sm:-left-8 h-16 w-16 sm:h-24 sm:w-24 rounded-full bg-gradient-to-br from-purple-500/30 to-pink-500/30 backdrop-blur-md border border-white/20 z-10 animate-float shadow-xl"></div>
+              <div className="floating-element absolute top-1/2 -right-4 sm:-right-6 h-12 w-12 sm:h-16 sm:w-16 rounded-xl bg-gradient-to-br from-cyan-500/30 to-blue-500/30 backdrop-blur-md border border-white/20 z-10 animate-float shadow-xl" style={{ animationDelay: '0.5s' }}></div>
               
               {/* Glow effect */}
               <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 blur-2xl -z-10 animate-pulse" style={{ animationDuration: '3s' }}></div>
