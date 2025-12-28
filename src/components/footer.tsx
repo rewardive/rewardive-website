@@ -25,7 +25,7 @@ export function Footer() {
       { name: "Careers", href: "#careers" },
     ],
     legal: [
-      { name: "Privacy", href: "#privacy" },
+      { name: "Privacy", href: "/privacy" },
       { name: "Terms", href: "#terms" },
       { name: "Security", href: "#security" },
       { name: "Cookies", href: "#cookies" },
