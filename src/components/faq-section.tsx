@@ -1,24 +1,23 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+"use client";
 
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 export function FAQSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   const faqs = [
     {
-      question: "How does Rewardive track my credit card offers?",
-      answer: "Rewardive uses advanced algorithms to scan and aggregate offers from major banks and card networks. We also allow you to scan UPI QR codes to instantly see which of your cards offers the best rewards for that specific merchant.",
+      question: "How does Rewardive find credit card offers?",
+      answer: "Rewardive collects publicly available offers and coupons from bank websites and card networks. You can also scan UPI QR codes to identify the merchant category and see which of your cards gives the best rewards for that purchase.",
     },
     {
-      question: "Is my financial data safe?",
-      answer: "Absolutely. We prioritize your security and privacy. Rewardive does not store your card numbers or sensitive banking credentials. We only track offer data and card types to provide recommendations.",
+      question: "Does Rewardive access my financial data?",
+      answer: "No. Rewardive does not access, store, or process any financial data. We do not provide financial services. We simply aggregate publicly available coupons and offer information to help you pick the right card.",
     },
     {
-      question: "Which banks and cards are supported?",
-      answer: "We support over 20+ major banks including HDFC, ICICI, SBI, Axis, and Amex, covering Visa, Mastercard, and RuPay networks. We are constantly adding more partners to our platform.",
+      question: "Which banks and cards do you track offers for?",
+      answer: "We collect offers from 20+ major banks including HDFC, ICICI, SBI, Axis, and Amex, covering Visa, Mastercard, and RuPay networks. We are constantly expanding the list of banks we track.",
     },
     {
       question: "Is the app free to use?",
@@ -28,39 +27,43 @@ export function FAQSection() {
       question: "Can I track milestone benefits?",
       answer: "Definitely. Rewardive allows you to track progress towards annual fee waivers, bonus reward points, and other milestone-based benefits so you never miss a target.",
     },
-    {
-      question: "How do I get support if I have issues?",
-      answer: "We're here to help. If you have questions or need assistance, you can reach out to our support team directly through the app or email us at support@rewardive.com.",
-    },
   ];
 
   return (
-    <section className="py-20 sm:py-32">
-      <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-16">
-          <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-            Got questions? We've got answers.
+    <section id="faq" className="bg-white px-8 py-20 lg:px-[120px]">
+      <div className="mx-auto max-w-3xl">
+        {/* Header */}
+        <div className="mb-12 flex flex-col items-center gap-4 text-center">
+          <span className="text-[13px] font-semibold tracking-wider text-[#3D8A5A]">
+            FAQ
+          </span>
+          <h2 className="text-3xl font-bold text-[#1A1918] sm:text-4xl" style={{ letterSpacing: "-1px" }}>
+            Frequently asked questions
           </h2>
-          <p className="max-w-2xl text-lg text-muted-foreground">
-            Here's everything you need to know before getting started.
-          </p>
         </div>
 
-        <Accordion type="single" collapsible className="w-full">
-          {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="text-lg font-semibold">
-                <div className="flex items-start text-left w-full">
-                  <span className="mr-4 text-blue-600 dark:text-blue-400">0{index + 1}</span>
-                  <span className="flex-1">{faq.question}</span>
+        {/* FAQ List */}
+        <div className="overflow-hidden rounded-2xl border border-[#F0F0F0]">
+          {faqs.map((faq, i) => (
+            <div key={i}>
+              <button
+                onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                className="flex w-full items-center justify-between px-6 py-5 text-left transition-colors hover:bg-[#FAFAFA]"
+              >
+                <span className="text-base font-medium text-[#1A1918]">{faq.question}</span>
+                <ChevronDown
+                  className={`h-5 w-5 flex-shrink-0 text-[#9C9B99] transition-transform ${openIndex === i ? "rotate-180" : ""}`}
+                />
+              </button>
+              {openIndex === i && (
+                <div className="px-6 pb-5 text-[15px] leading-relaxed text-[#9C9B99]">
+                  {faq.answer}
                 </div>
-              </AccordionTrigger>
-              <AccordionContent className="pl-8  text-muted-foreground">
-                {faq.answer}
-              </AccordionContent>
-            </AccordionItem>
+              )}
+              {i < faqs.length - 1 && <div className="mx-6 h-px bg-[#F0F0F0]" />}
+            </div>
           ))}
-        </Accordion>
+        </div>
       </div>
     </section>
   );
