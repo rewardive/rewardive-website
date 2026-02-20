@@ -28,6 +28,7 @@ export function CTASection() {
               alt="Get it on Google Play"
               width={200}
               height={60}
+              sizes="(max-width: 768px) 164px, 200px"
               className="h-[56px] w-auto"
             />
           </Link>
@@ -42,6 +43,7 @@ export function CTASection() {
               alt="Join us on TestFlight"
               width={200}
               height={60}
+              sizes="(max-width: 768px) 164px, 200px"
               className="h-[56px] w-auto rounded-lg"
             />
           </Link>

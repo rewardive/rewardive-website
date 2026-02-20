@@ -45,7 +45,7 @@ export function FeaturesGrid() {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="flex flex-col gap-5 rounded-2xl bg-[var(--surface)] p-8"
+              className="flex flex-col gap-5 rounded-2xl bg-[var(--surface)] p-8 ring-1 ring-[#E5E5E5]"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--border)]">
                 <feature.icon className="h-6 w-6 text-[var(--muted-foreground)]" />

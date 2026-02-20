@@ -39,6 +39,8 @@ export function HeroSection() {
               alt="Get it on Google Play"
               width={200}
               height={60}
+              sizes="(max-width: 768px) 164px, 200px"
+              priority={true}
               className="h-[56px] w-auto"
             />
           </Link>
@@ -53,6 +55,8 @@ export function HeroSection() {
               alt="Join us on TestFlight"
               width={200}
               height={60}
+              sizes="(max-width: 768px) 164px, 200px"
+              priority={true}
               className="h-[56px] w-auto rounded-lg"
             />
           </Link>

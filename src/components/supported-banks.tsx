@@ -71,6 +71,7 @@ export function SupportedBanks() {
                 alt={network.name}
                 width={120}
                 height={60}
+                sizes="120px"
                 className="h-12 w-auto object-contain"
               />
             </div>
@@ -89,6 +90,7 @@ export function SupportedBanks() {
                 alt={bank.name}
                 width={80}
                 height={40}
+                sizes="80px"
                 className="h-8 w-auto object-contain"
               />
             </div>
@@ -107,6 +109,7 @@ export function SupportedBanks() {
                 alt={bank.name}
                 width={80}
                 height={40}
+                sizes="80px"
                 className="h-8 w-auto object-contain"
               />
             </div>

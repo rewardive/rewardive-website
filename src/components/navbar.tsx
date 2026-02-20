@@ -20,7 +20,7 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-8 py-5 lg:px-[120px]">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5">
-          <Image src={logo} alt="Rewardive" width={36} height={36} className="h-9 w-9" />
+          <Image src={logo} alt="Rewardive" width={36} height={36} sizes="36px" priority={true} className="h-9 w-9" />
           <span className="text-xl font-semibold tracking-tight text-[#1A1918]">Rewardive</span>
         </Link>
 
