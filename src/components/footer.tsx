@@ -17,16 +17,16 @@ export function Footer() {
     {
       title: "Company",
       links: [
-        { name: "About", href: "#", onClick: (e: React.MouseEvent) => e.preventDefault() },
-        { name: "Blog", href: "#", onClick: (e: React.MouseEvent) => e.preventDefault() },
-        { name: "Contact", href: "#", onClick: (e: React.MouseEvent) => e.preventDefault() },
+        { name: "About", comingSoon: true },
+        { name: "Blog", comingSoon: true },
+        { name: "Contact", comingSoon: true },
       ],
     },
     {
       title: "Legal",
       links: [
         { name: "Privacy", href: "/privacy" },
-        { name: "Terms", href: "#", onClick: (e: React.MouseEvent) => e.preventDefault() },
+        { name: "Terms", comingSoon: true },
         { name: "Copyright", href: "/copyright" },
       ],
     },
@@ -56,13 +56,21 @@ export function Footer() {
                 <ul className="flex flex-col gap-3">
                   {col.links.map((link) => (
                     <li key={link.name}>
-                      <Link 
-                        href={link.href} 
-                        onClick={link.onClick}
-                        className="text-sm text-[#9C9B99] transition-colors hover:text-[#6D6C6A]"
-                      >
-                        {link.name}
-                      </Link>
+                      {"href" in link && link.href ? (
+                        <Link 
+                          href={link.href} 
+                          className="text-sm text-[#9C9B99] transition-colors hover:text-[#6D6C6A]"
+                        >
+                          {link.name}
+                        </Link>
+                      ) : (
+                        <span 
+                          aria-disabled="true"
+                          className="text-sm text-[#9C9B99] opacity-60"
+                        >
+                          {link.name}
+                        </span>
+                      )}
                     </li>
                   ))}
                 </ul>

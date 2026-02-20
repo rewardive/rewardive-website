@@ -33,13 +33,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const gaId = process.env.NEXT_PUBLIC_GA_ID || "G-D73SPMKLJC";
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
   
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body className={`${inter.className} ${playfair.variable}`}>
         {children}
-        <GoogleAnalytics gaId={gaId} />
+        {gaId && <GoogleAnalytics gaId={gaId} />}
       </body>
     </html>
   );
