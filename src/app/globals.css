@@ -24,6 +24,7 @@
     --input: 30 4% 94%;
     --ring: 30 5% 10%;
     --radius: 0.5rem;
+    --surface: 0 0% 98%;
   }
 }
 
@@ -32,7 +33,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-white text-foreground antialiased;
+    @apply bg-background text-foreground antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }

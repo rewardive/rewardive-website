@@ -11,7 +11,7 @@ export function StatsBar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between">
         {stats.map((stat, i) => (
           <div key={i} className="flex flex-col items-center gap-1">
-            <span className="text-2xl font-bold tracking-tight text-[#1A1918] sm:text-[28px]" style={{ letterSpacing: "-1px" }}>
+            <span className="text-2xl font-bold text-[#1A1918] sm:text-[28px]" style={{ letterSpacing: "-1px" }}>
               {stat.value}
             </span>
             <span className="text-sm text-[#9C9B99]">{stat.label}</span>

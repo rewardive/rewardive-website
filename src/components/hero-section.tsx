@@ -17,7 +17,7 @@ export function HeroSection() {
 
         {/* Heading */}
         <h1 className="max-w-[900px] text-5xl font-bold leading-[1.05] tracking-tight text-[#1A1918] sm:text-7xl" style={{ letterSpacing: "-2px" }}>
-          Maximize Your{"\n"}Card Benefits
+          Maximize Your<br />Card Benefits
         </h1>
 
         {/* Description */}

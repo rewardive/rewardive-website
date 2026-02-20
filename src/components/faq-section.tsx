@@ -47,7 +47,11 @@ export function FAQSection() {
           {faqs.map((faq, i) => (
             <div key={i}>
               <button
+                type="button"
+                id={`faq-button-${i}`}
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                aria-expanded={openIndex === i}
+                aria-controls={`faq-panel-${i}`}
                 className="flex w-full items-center justify-between px-6 py-5 text-left transition-colors hover:bg-[#FAFAFA]"
               >
                 <span className="text-base font-medium text-[#1A1918]">{faq.question}</span>
@@ -56,7 +60,7 @@ export function FAQSection() {
                 />
               </button>
               {openIndex === i && (
-                <div className="px-6 pb-5 text-[15px] leading-relaxed text-[#9C9B99]">
+                <div id={`faq-panel-${i}`} role="region" aria-labelledby={`faq-button-${i}`} className="px-6 pb-5 text-[15px] leading-relaxed text-[#9C9B99]">
                   {faq.answer}
                 </div>
               )}

@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import logo from "../components/images/logo.png";
+import logo from "./images/logo.png";
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -16,7 +16,7 @@ export function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white">
+    <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-8 py-5 lg:px-[120px]">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5">
@@ -45,6 +45,9 @@ export function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
+          type="button"
+          aria-label="Toggle mobile menu"
+          aria-expanded={mobileMenuOpen}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="rounded-full p-2 text-[#1A1918] transition-colors hover:bg-[#F5F5F5] md:hidden"
         >
@@ -68,7 +71,7 @@ export function Navbar() {
             ))}
             <Link
               href="#download"
-              className="mt-2 inline-flex w-fit rounded-full bg-[#1A1918] px-6 py-2.5 text-sm font-medium text-white"
+              className="mt-2 inline-flex w-fit rounded-full bg-[#1A1918] px-6 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
               onClick={() => setMobileMenuOpen(false)}
             >
               Download App

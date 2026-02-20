@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../components/images/logo.png";
@@ -15,16 +17,16 @@ export function Footer() {
     {
       title: "Company",
       links: [
-        { name: "About", href: "#about" },
-        { name: "Blog", href: "#blog" },
-        { name: "Contact", href: "#contact" },
+        { name: "About", href: "#", onClick: (e: React.MouseEvent) => e.preventDefault() },
+        { name: "Blog", href: "#", onClick: (e: React.MouseEvent) => e.preventDefault() },
+        { name: "Contact", href: "#", onClick: (e: React.MouseEvent) => e.preventDefault() },
       ],
     },
     {
       title: "Legal",
       links: [
         { name: "Privacy", href: "/privacy" },
-        { name: "Terms", href: "#terms" },
+        { name: "Terms", href: "#", onClick: (e: React.MouseEvent) => e.preventDefault() },
         { name: "Copyright", href: "/copyright" },
       ],
     },
@@ -54,7 +56,11 @@ export function Footer() {
                 <ul className="flex flex-col gap-3">
                   {col.links.map((link) => (
                     <li key={link.name}>
-                      <Link href={link.href} className="text-sm text-[#9C9B99] transition-colors hover:text-[#6D6C6A]">
+                      <Link 
+                        href={link.href} 
+                        onClick={link.onClick}
+                        className="text-sm text-[#9C9B99] transition-colors hover:text-[#6D6C6A]"
+                      >
                         {link.name}
                       </Link>
                     </li>

@@ -47,7 +47,7 @@ export function CTASection() {
           </Link>
         </div>
 
-        <p className="text-sm text-[#9C9B99]">rewardive@gmail.com</p>
+        <a href="mailto:rewardive@gmail.com" className="text-sm text-[#9C9B99] hover:text-[#6D6C6A] transition-colors">rewardive@gmail.com</a>
       </div>
     </section>
   );

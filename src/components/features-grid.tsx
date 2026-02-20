@@ -29,13 +29,13 @@ export function FeaturesGrid() {
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <div className="mb-14 flex flex-col items-center gap-4 text-center">
-          <span className="text-[13px] font-semibold tracking-wider text-[#3D8A5A]">
+          <span className="text-[13px] font-semibold tracking-wider text-[var(--accent)]">
             Features
           </span>
-          <h2 className="max-w-[700px] text-3xl font-bold leading-tight text-[#1A1918] sm:text-[44px]" style={{ letterSpacing: "-1.5px", lineHeight: 1.15 }}>
+          <h2 className="max-w-[700px] text-3xl font-bold leading-tight leading-[1.15] text-[var(--foreground)] sm:text-[44px]" style={{ letterSpacing: "-1.5px" }}>
             Everything you need to maximize your rewards
           </h2>
-          <p className="text-lg text-[#9C9B99]">
+          <p className="text-lg text-[var(--muted-foreground)]">
             One app to discover coupons and find the right card for every purchase.
           </p>
         </div>
@@ -45,13 +45,13 @@ export function FeaturesGrid() {
           {features.map((feature, i) => (
             <div
               key={i}
-              className="flex flex-col gap-5 rounded-2xl bg-[#FAFAFA] p-8"
+              className="flex flex-col gap-5 rounded-2xl bg-[var(--surface)] p-8"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#F0F0F0]">
-                <feature.icon className="h-6 w-6 text-[#6D6C6A]" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--border)]">
+                <feature.icon className="h-6 w-6 text-[var(--muted-foreground)]" />
               </div>
-              <h3 className="text-lg font-semibold text-[#1A1918]">{feature.title}</h3>
-              <p className="text-[15px] leading-relaxed text-[#9C9B99]" style={{ lineHeight: 1.6 }}>
+              <h3 className="text-lg font-semibold text-[var(--foreground)]">{feature.title}</h3>
+              <p className="text-[15px] leading-relaxed leading-[1.6] text-[var(--muted-foreground)]">
                 {feature.description}
               </p>
             </div>

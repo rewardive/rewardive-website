@@ -1,4 +1,4 @@
-import { ArrowRight, CreditCard, ShoppingCart } from "lucide-react";
+import { CreditCard } from "lucide-react";
 
 export function UseCase() {
   return (

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Inter, Playfair_Display } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import logo from '../components/images/logo.png'
 const inter = Inter({ subsets: ["latin"] });
@@ -33,19 +33,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gaId = process.env.NEXT_PUBLIC_GA_ID || "G-D73SPMKLJC";
+  
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-D73SPMKLJC"></script>
-      <script id="google-analytics">
-      {`window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-D73SPMKLJC');`}
-      </script>
-      </head>
       <body className={`${inter.className} ${playfair.variable}`}>
         {children}
+        <GoogleAnalytics gaId={gaId} />
       </body>
     </html>
   );
