@@ -1,37 +1,35 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../components/images/logo.png";
 
-export function Footer() {
-  const columns = [
-    {
-      title: "Product",
-      links: [
-        { name: "Features", href: "#features" },
-        { name: "How it works", href: "#how-it-works" },
-        { name: "Download", href: "#download" },
-      ],
-    },
-    {
-      title: "Company",
-      links: [
-        { name: "About", comingSoon: true },
-        { name: "Blog", comingSoon: true },
-        { name: "Contact", comingSoon: true },
-      ],
-    },
-    {
-      title: "Legal",
-      links: [
-        { name: "Privacy", href: "/privacy" },
-        { name: "Terms", comingSoon: true },
-        { name: "Copyright", href: "/copyright" },
-      ],
-    },
-  ];
+const columns = [
+  {
+    title: "Product",
+    links: [
+      { name: "Features", href: "#features" },
+      { name: "How it works", href: "#how-it-works" },
+      { name: "Download", href: "#download" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { name: "About", comingSoon: true },
+      { name: "Blog", comingSoon: true },
+      { name: "Contact", comingSoon: true },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { name: "Privacy", href: "/privacy" },
+      { name: "Terms", comingSoon: true },
+      { name: "Copyright", href: "/copyright" },
+    ],
+  },
+];
 
+export function Footer() {
   return (
     <footer className="bg-white px-8 py-12 lg:px-[120px]">
       <div className="mx-auto max-w-7xl">
@@ -43,15 +41,15 @@ export function Footer() {
               <Image src={logo} alt="Rewardive" width={28} height={28} className="h-7 w-7" />
               <span className="text-lg font-semibold text-[#1A1918]">Rewardive</span>
             </Link>
-            <p className="text-sm leading-relaxed text-[#9C9B99]" style={{ lineHeight: 1.6 }}>
+            <p className="text-sm leading-[1.6] text-[#9C9B99]">
               We collect coupons and offers from across the web and recommend the best card for every purchase.
             </p>
           </div>
 
           {/* Links */}
           <div className="flex gap-16">
-            {columns.map((col, i) => (
-              <div key={i}>
+            {columns.map((col) => (
+              <div key={col.title}>
                 <h3 className="mb-4 text-sm font-semibold text-[#1A1918]">{col.title}</h3>
                 <ul className="flex flex-col gap-3">
                   {col.links.map((link) => (
