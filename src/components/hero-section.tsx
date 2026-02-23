@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import playStoreBadge from "../components/images/play-store-badge.svg";
-import appStoreBadge from "../components/images/app-store-badge.svg";
+import playStoreBadge from "./images/play-store-badge.svg";
+import appStoreBadge from "./images/app-store-badge.svg";
 
 export function HeroSection() {
   return (
