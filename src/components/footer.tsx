@@ -12,18 +12,9 @@ const columns = [
     ],
   },
   {
-    title: "Company",
-    links: [
-      { name: "About", comingSoon: true },
-      { name: "Blog", comingSoon: true },
-      { name: "Contact", comingSoon: true },
-    ],
-  },
-  {
     title: "Legal",
     links: [
       { name: "Privacy", href: "/privacy" },
-      { name: "Terms", comingSoon: true },
       { name: "Copyright", href: "/copyright" },
     ],
   },
@@ -55,14 +46,14 @@ export function Footer() {
                   {col.links.map((link) => (
                     <li key={link.name}>
                       {"href" in link && link.href ? (
-                        <Link 
-                          href={link.href} 
+                        <Link
+                          href={link.href}
                           className="text-sm text-[#9C9B99] transition-colors hover:text-[#6D6C6A]"
                         >
                           {link.name}
                         </Link>
                       ) : (
-                        <span 
+                        <span
                           aria-disabled="true"
                           className="text-sm text-[#9C9B99] opacity-60"
                         >
@@ -89,6 +80,7 @@ export function Footer() {
             {[
               { name: "X", href: "https://x.com/rewardive" },
               { name: "LinkedIn", href: "https://www.linkedin.com/company/rewardive" },
+              { name: "Reddit", href: "https://www.reddit.com/r/rewardive/" },
               { name: "Instagram", href: "https://www.instagram.com/rewardive.app/" },
               { name: "Bluesky", href: "https://bsky.app/profile/rewardive.bsky.social" },
             ].map((social) => (
