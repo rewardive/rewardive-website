@@ -23,10 +23,6 @@ export function FAQSection() {
       question: "Is the app free to use?",
       answer: "Yes, the core features of Rewardive, including offer discovery and UPI scanning, are completely free for users. We may introduce premium features for advanced analytics in the future.",
     },
-    {
-      question: "Can I track milestone benefits?",
-      answer: "Definitely. Rewardive allows you to track progress towards annual fee waivers, bonus reward points, and other milestone-based benefits so you never miss a target.",
-    },
   ];
 
   return (
