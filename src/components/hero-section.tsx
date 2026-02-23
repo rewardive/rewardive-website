@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import playStoreBadge from "../components/images/playstore.png";
-import testflightLogo from "../components/images/testflight.png";
+import playStoreBadge from "./images/play-store-badge.svg";
+import appStoreBadge from "./images/app-store-badge.svg";
 
 export function HeroSection() {
   return (
@@ -39,25 +39,25 @@ export function HeroSection() {
               alt="Get it on Google Play"
               width={200}
               height={60}
-              sizes="(max-width: 768px) 164px, 200px"
               priority={true}
+              unoptimized
               className="h-[56px] w-auto"
             />
           </Link>
           <Link
-            href="https://testflight.apple.com/join/fTgTNCqx"
+            href="https://apps.apple.com/us/app/rewardive/id6756065738"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-all hover:opacity-90"
           >
             <Image
-              src={testflightLogo}
-              alt="Join us on TestFlight"
+              src={appStoreBadge}
+              alt="Download on the App Store"
               width={200}
               height={60}
-              sizes="(max-width: 768px) 164px, 200px"
               priority={true}
-              className="h-[56px] w-auto rounded-lg"
+              unoptimized
+              className="h-[56px] w-auto"
             />
           </Link>
         </div>
