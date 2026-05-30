@@ -23,7 +23,7 @@ export default function CopyrightPage() {
           <section className="space-y-4">
             <h2 className="text-2xl font-semibold text-foreground">1. Ownership of Content</h2>
             <p>
-              The Rewardive website, mobile application, and all content included therein, such as text, graphics, logos, images, audio clips, video clips, digital downloads, data compilations, and software (collectively, the "Content"), are the property of Rewardive or its content suppliers and are protected by United States and international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.
+              The Rewardive website, mobile application, and all content included therein, such as text, graphics, logos, images, audio clips, video clips, digital downloads, data compilations, and software (collectively, the &quot;Content&quot;), are the property of Rewardive or its content suppliers and are protected by United States and international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.
             </p>
             <p>
               The compilation of all Content on Rewardive is the exclusive property of Rewardive and is protected by copyright laws. All software used on Rewardive is the property of Rewardive or its software suppliers and is protected by copyright laws.
@@ -33,7 +33,7 @@ export default function CopyrightPage() {
           <section className="space-y-4">
             <h2 className="text-2xl font-semibold text-foreground">2. Trademarks</h2>
             <p>
-              The name "Rewardive," the Rewardive logo, and any other Rewardive product or service names, logos, or slogans that may appear on the website or application are trademarks of Rewardive and may not be copied, imitated, or used, in whole or in part, without the prior written permission of Rewardive.
+              The name &quot;Rewardive,&quot; the Rewardive logo, and any other Rewardive product or service names, logos, or slogans that may appear on the website or application are trademarks of Rewardive and may not be copied, imitated, or used, in whole or in part, without the prior written permission of Rewardive.
             </p>
             <p>
               All other trademarks, registered trademarks, product names, and company names or logos mentioned on Rewardive are the property of their respective owners. Reference to any products, services, processes, or other information, by name, trademark, manufacturer, supplier, or otherwise, does not constitute or imply endorsement, sponsorship, or recommendation by Rewardive.
@@ -62,7 +62,7 @@ export default function CopyrightPage() {
             <ul className="list-disc pl-6 space-y-2">
               <li>Reproduce, duplicate, copy, sell, resell, visit, or otherwise exploit Rewardive or any portion of Rewardive for any commercial purpose without express written consent of Rewardive;</li>
               <li>Frame or utilize framing techniques to enclose any trademark, logo, or other proprietary information of Rewardive without express written consent;</li>
-              <li>Use any meta tags or any other "hidden text" utilizing Rewardive's name or trademarks without the express written consent of Rewardive.</li>
+              <li>Use any meta tags or any other &quot;hidden text&quot; utilizing Rewardive&apos;s name or trademarks without the express written consent of Rewardive.</li>
             </ul>
           </section>
 

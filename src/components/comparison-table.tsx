@@ -38,7 +38,7 @@ export function ComparisonTable() {
             Why Rewardive?
           </p>
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-            There's a smarter way to manage money
+            There&apos;s a smarter way to manage money
           </h2>
         </div>
 
