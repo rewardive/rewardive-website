@@ -45,7 +45,7 @@ export function HeroSection() {
             />
           </Link>
           <Link
-            href="https://apps.apple.com/us/app/rewardive/id6756065738"
+            href="https://apps.apple.com/in/app/rewardive/id6756065738"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-all hover:opacity-90"
